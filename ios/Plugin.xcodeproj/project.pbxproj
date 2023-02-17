@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		03FC29A292ACC40490383A1F /* Pods_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */; };
+		05DC551C299E73990061399C /* WebSocketsServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC551B299E73990061399C /* WebSocketsServer.swift */; };
+		05DC551E299E84E30061399C /* WebSocketsServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC551D299E84E30061399C /* WebSocketsServerConnection.swift */; };
+		05DC5522299EF1220061399C /* WebSocketsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DC5521299EF1220061399C /* WebSocketsClient.swift */; };
 		20C0B05DCFC8E3958A738AF2 /* Pods_PluginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6753A823D3815DB436415E3 /* Pods_PluginTests.framework */; };
-		2F98D68224C9AAE500613A4C /* WebSockets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F98D68124C9AAE400613A4C /* WebSockets.swift */; };
 		50ADFF92201F53D600D50D53 /* Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFF88201F53D600D50D53 /* Plugin.framework */; };
 		50ADFF97201F53D600D50D53 /* WebSocketsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFF96201F53D600D50D53 /* WebSocketsTests.swift */; };
 		50ADFF99201F53D600D50D53 /* WebSocketsPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 50ADFF8B201F53D600D50D53 /* WebSocketsPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,7 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F98D68124C9AAE400613A4C /* WebSockets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSockets.swift; sourceTree = "<group>"; };
+		05DC551B299E73990061399C /* WebSocketsServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketsServer.swift; sourceTree = "<group>"; };
+		05DC551D299E84E30061399C /* WebSocketsServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketsServerConnection.swift; sourceTree = "<group>"; };
+		05DC5521299EF1220061399C /* WebSocketsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketsClient.swift; sourceTree = "<group>"; };
 		3B2A61DA5A1F2DD4F959604D /* Pods_Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF88201F53D600D50D53 /* Plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50ADFF8B201F53D600D50D53 /* WebSocketsPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketsPlugin.h; sourceTree = "<group>"; };
@@ -69,6 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05DC551F299E93980061399C /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				05DC551B299E73990061399C /* WebSocketsServer.swift */,
+				05DC551D299E84E30061399C /* WebSocketsServerConnection.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		05DC5520299E93B40061399C /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				05DC5521299EF1220061399C /* WebSocketsClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
 		50ADFF7E201F53D600D50D53 = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				50E1A94720377CB70090CE1A /* WebSocketsPlugin.swift */,
-				2F98D68124C9AAE400613A4C /* WebSockets.swift */,
+				05DC5520299E93B40061399C /* Client */,
+				05DC551F299E93980061399C /* Server */,
 				50ADFF8B201F53D600D50D53 /* WebSocketsPlugin.h */,
 				50ADFFA72020EE4F00D50D53 /* WebSocketsPlugin.m */,
 				50ADFF8C201F53D600D50D53 /* Info.plist */,
@@ -192,7 +214,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = "Max Lynch";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					50ADFF87201F53D600D50D53 = {
 						CreatedOnToolsVersion = 9.2;
@@ -306,8 +328,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05DC5522299EF1220061399C /* WebSocketsClient.swift in Sources */,
 				50E1A94820377CB70090CE1A /* WebSocketsPlugin.swift in Sources */,
-				2F98D68224C9AAE500613A4C /* WebSockets.swift in Sources */,
+				05DC551E299E84E30061399C /* WebSocketsServerConnection.swift in Sources */,
+				05DC551C299E73990061399C /* WebSocketsServer.swift in Sources */,
 				50ADFFA82020EE4F00D50D53 /* WebSocketsPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
