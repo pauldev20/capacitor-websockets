@@ -32,7 +32,7 @@ public class WebSocketsPlugin: CAPPlugin {
         self.websocketsserver.onConnectionStopHandler = { (conn, error) in
             self.notifyListeners("onClose", data: [
                 "uuid": conn.id,
-                "error": error.debugDescription
+                "error": error != nil ? error.debugDescription : ""
             ])
         }
         self.websocketsserver.onConnectionReceiveDataHandler = { (conn, data) in
@@ -58,7 +58,7 @@ public class WebSocketsPlugin: CAPPlugin {
         self.websocketsserver.onConnectionErrorHandler = { (conn, error) in
             self.notifyListeners("onError", data: [
                 "uuid": conn.id,
-                "error": error.localizedDescription
+                "error": error != nil ? error.localizedDescription : ""
             ])
         }
 
@@ -84,7 +84,7 @@ public class WebSocketsPlugin: CAPPlugin {
         }
         self.websocketsclient.onStopHandler = { error in
             self.notifyListeners("onClose", data: [
-                "error": error.debugDescription
+                "error": error != nil ? error.debugDescription : ""
             ])
         }
         self.websocketsclient.onReceiveDataHandler = { data in
@@ -99,7 +99,7 @@ public class WebSocketsPlugin: CAPPlugin {
         }
         self.websocketsclient.onErrorHandler = { error in
             self.notifyListeners("onError", data: [
-                "error": error.localizedDescription
+                "error": error != nil ? error.localizedDescription : ""
             ])
         }
 
