@@ -1,4 +1,4 @@
-# capacitor-websockets
+# capacitor-websockets 🔌
 
 Simple WebSockets client and server for the Capacitor framework. It's only a really basic implementation with some caveats.
 If you find any bugs or have improvements create an issue or pull request.
